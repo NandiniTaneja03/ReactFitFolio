@@ -1,0 +1,239 @@
+/* ========== Layout ========== */
+.resume-dashboard {
+  display: flex;
+  height: 100vh;
+  background: #f5f6f8;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-right: 1px solid #e4e4e4;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.resume-list {
+  margin-top: 1rem;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.resume-card {
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.resume-card:hover {
+  background: #f0f0f0;
+}
+
+.resume-card.active {
+  background: #e8f0ff;
+  border-color: #3b82f6;
+}
+
+.resume-title {
+  font-weight: 600;
+}
+
+.resume-sub {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Editor */
+.editor {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title-input {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  background: transparent;
+  width: 60%;
+}
+
+/* Modern Card */
+.modern-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Inputs */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.input-group input:focus {
+  outline: 2px solid #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #1e6cf5;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.save-btn {
+  background: #10b981;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #079669;
+}
+
+/* Utility */
+.empty-text {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.page-loader {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+/* MASTER LAYOUT */
+.resume-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1.6fr 0.8fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* LEFT FORM */
+.resume-editor {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* RIGHT PREVIEW PANEL */
+.resume-preview {
+  padding: 1rem;
+}
+
+.preview-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 90vh;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  font-family: "Inter", sans-serif;
+}
+
+/* Resume Typography */
+.preview-name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.preview-title {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.preview-contact p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.section-header {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.section-text {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.skill-list li {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.exp-block, .edu-block {
+  margin-bottom: 1rem;
+}

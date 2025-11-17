@@ -1,39 +1,30 @@
-import { useState } from 'react';
+import { gql, useMutation } from "@apollo/client";
 
-export const useResumeAnalysis = () => {
-  const [score, setScore] = useState(null);
-  const [feedback, setFeedback] = useState([]);
-  const [loading, setLoading] = useState(false);
+const ANALYZE_RESUME = gql`
+  mutation AnalyzeResume($resumeId: String!, $file: Upload!) {
+    analyzeResume(resumeId: $resumeId, file: $file) {
+      score
+      feedback
+      strengths
+      improvements
+    }
+  }
+`;
 
-  const analyzeResume = async (file) => {
-    setLoading(true);
-    
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Random score between 60-100 (same as original logic)
-    const randomScore = Math.floor(Math.random() * 41) + 60;
-    
-    // Random feedback selection
-    const feedbackList = [
-      "Good headings and formatting.",
-      "Add more relevant skills.",
-      "Highlight measurable achievements.",
-      "Use industry keywords.",
-      "Keep it concise and focused.",
-      "Make contact info visible."
-    ];
-    const shuffled = feedbackList.sort(() => 0.5 - Math.random()).slice(0, 3);
-    
-    setScore(randomScore);
-    setFeedback(shuffled);
-    setLoading(false);
+export function useAnalyzeResume() {
+  const [analyzeResumeMutation, { data, loading, error }] =
+    useMutation(ANALYZE_RESUME);
+
+  const analyzeResume = async (resumeId, file) => {
+    return analyzeResumeMutation({
+      variables: { resumeId, file },
+    });
   };
 
   return {
     analyzeResume,
-    score,
-    feedback,
-    loading
+    analysis: data?.analyzeResume,
+    loading,
+    error,
   };
-};
+}

@@ -1,13 +1,14 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-
+import Login from './pages/Login';
+import Signup from './pages/SignUp';
 import ResumeBuilder from './components/resume/ResumeBuilder';
 import ResumeGrader from './components/resume/ResumeGrader';
+import ProtectedRoute from './components/common/ProtectedRoute';
 import './styles/App.css';
 
 function App() {
@@ -19,11 +20,26 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-           
-           
-            
-            <Route path="/builder" element={<ResumeBuilder />} />
-            <Route path="/grader" element={<ResumeGrader />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+
+            <Route
+              path="/builder"
+              element={
+                <ProtectedRoute>
+                  <ResumeBuilder />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/grader"
+              element={
+                <ProtectedRoute>
+                  <ResumeGrader />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />
@@ -32,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; // ✅ MUST be default export

@@ -1,0 +1,152 @@
+/* Container for Resume Grader */
+.resume-grader {
+  padding: 30px;
+  max-width: 820px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 500px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Beautiful controls card - larger and modern */
+.analysis-controls {
+  display: flex;
+  gap: 25px; /* more space between controls */
+  align-items: center;
+  padding: 70px; /* larger padding */
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e0f0ff, #f0f4ff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* bigger shadow */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Custom file input */
+.file-upload {
+  flex: 2; /* occupy more space */
+  padding: 20px 25px; /* larger click area */
+  border: 2px dashed #4f7efc;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #4f7efc;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #fff;
+  min-width: 250px; /* ensure it doesn't shrink too much */
+}
+
+.file-upload:hover {
+  background: #e6f0ff;
+  border-color: #3560c9;
+}
+
+.file-upload input {
+  display: none;
+}
+
+/* Analyze Button */
+.btn.analyze-btn {
+  flex: 1; /* allows button to scale proportionally */
+  padding: 1rem 2rem; /* bigger button */
+  border: none;
+  border-radius: 16px;
+  background-color: #4f7efc;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 16px rgba(79, 126, 252, 0.45);
+}
+
+.btn.analyze-btn:hover {
+  background-color: #3560c9;
+  box-shadow: 0 8px 20px rgba(79, 126, 252, 0.55);
+}
+
+.btn.analyze-btn:disabled {
+  background-color: #a0bfff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Analysis results */
+.analysis-results {
+  margin-top: 20px;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #f9faff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.score-display {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid #4caf50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.feedback-item,
+.strength-item,
+.improvement-item {
+  margin: 10px 0;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.2s;
+}
+
+.feedback-item:hover,
+.strength-item:hover,
+.improvement-item:hover {
+  background: #e6f0ff;
+  border-color: #4f7efc;
+}
+
+h3, h4 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .analysis-controls {
+    flex-direction: column;
+  }
+
+  .file-upload {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .btn.analyze-btn {
+    width: 100%;
+  }
+}
